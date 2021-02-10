@@ -1,0 +1,155 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  font-family:"Quicksand",sans-serif;
+}
+html{
+  font-size: 62.5%
+}
+.container{
+  width: 100%;
+  height: 110vh;
+  background-color: black; 
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 0 17rem;
+}
+.calendar{
+  width: 100rem;
+  height: 65rem;
+  background-color: rgb(27, 27, 27);
+}  
+.month{
+  width: 100%;
+  height: 15rem;
+  background-color: rgb(24, 226, 132);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+}
+.month i{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.month i:hover{
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.month h1{
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+}
+.month p{
+  font-size: 1.6rem;
+}
+.weekdays{
+  width: 100%;
+  height: 6.5rem;
+  padding: 0 0.4rem;
+  background-color: rgba(24, 226, 132, 0.3);
+  display: flex;
+  align-items: center;
+}
+.weekdays div{
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  width: calc(99.2rem/7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.days{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+}
+.days div{
+  font-size: 1.4rem;
+  margin: 0.3rem;
+  width:calc(95.2rem/7);
+  height: 6.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.days div:hover:not(.today){
+  background-color: black;
+  border: 0.2rem solid #777;
+  cursor: pointer;
+}
+.prev-date,
+.next-date{
+  opacity:0.5;
+}
+.today{
+  background-color: rgb(24, 226, 132);
+}
+.popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+ 
+.popup .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#fff;
+  color:black;
+  width:500px;
+  height:250px;
+  z-index:1;
+  text-align:center;
+  padding:20px;
+  box-sizing:border-box;
+}
+ 
+.popup .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  background:#222;
+  color:#fff;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+.popup .event{
+  border: black;
+  height:200px;
+  width :200px;
+}
+ 
+.popup.active .overlay {
+  display:block;
+}
+ 
+.popup.active .content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}
+ 
